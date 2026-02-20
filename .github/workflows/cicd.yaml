@@ -41,15 +41,19 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
-        go-version: 1.22
+        go-version: "1.22"
+        cache: true
 
     - name: Download dependencies
-      run: go mod tidy
+      run: |
+        go mod tidy
+        go mod download
 
     - name: Run golangci-lint
       uses: golangci/golangci-lint-action@v6
       with:
         version: latest
+        args: --timeout=5m
 
   # Stage 3 - Docker Build & Push
   push:
