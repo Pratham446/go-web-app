@@ -17,7 +17,7 @@ on:
 # checout the source code
 # Install go
 # Run the Build Command
-# Test the unit test cases
+# Test the unit test case
 
 jobs:
 
