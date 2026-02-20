@@ -83,6 +83,11 @@ push:
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/go-web-app:${{github.run_id}}
 
+
+
+# Stage 4 - once the new Image is created i want to update the helm chart
+
+
 update-newtag-in-helm-chart:
     runs-on: ubuntu-latest
 
